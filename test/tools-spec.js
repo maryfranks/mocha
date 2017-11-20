@@ -15,6 +15,8 @@ describe("Tools", function () {
 
   describe("loadWiki()", function() {
 
+    this.timeout(5000);
+
     it ("Load Abraham Lincoln's wikipedia page", function(done) {
       tools.loadWiki({ first: "Abraham", last: "Lincoln"}, function(html) {
         expect(html).to.be.ok;
