@@ -15,10 +15,12 @@ describe("Tools", function () {
 
   describe("loadWiki()", function() {
 
-    it ("Load Abraham Lincoln's wikipedia page")
+    it ("Load Abraham Lincoln's wikipedia page", function(done) {
       tools.loadWiki({ first: "Abraham", last: "Lincoln"}, function(html) {
         expect(html).to.be.ok;
+        done();
       });
+    });
   });
 
 
