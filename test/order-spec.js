@@ -17,6 +17,12 @@ describe("Ordering Items", function() {
 
   });
 
-  it("order an item when there are enough in stock");
+  it("order an item when there are enough in stock", function(done) {
+
+    order.orderItem("CCC", 3, function(){
+      done();
+    });
+
+  });
 
 });
