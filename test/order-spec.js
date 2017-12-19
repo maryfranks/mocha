@@ -1,5 +1,7 @@
 const expect = require("chai").expect;
-const order = require("../lib/order");
+const rewire = require("rewire");
+
+const order = rewire("../lib/order");
 
 describe("Ordering Items", function() {
 
@@ -10,6 +12,8 @@ describe("Ordering Items", function() {
       {sku: "BBB", qty: 0},
       {sku: "CCC", qty: 3}
     ];
+
+    order.__set__("inventoryData", this.testData);
 
   });
 
